@@ -5,11 +5,11 @@ export default function DashboardDapur() {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const token = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2Nsb3VkLmdvb2dsZS5jb20vd29ya3N0YXRpb25zIiwiYXVkIjoiZmlyZWJhc2UtcmVzdG8tMTc1NDIxOTY3NjYzNi5jbHVzdGVyLTQ0a3gyZWlvY2JoZTJ0eWszem95bzNyeXVvLmNsb3Vkd29ya3N0YXRpb25zLmRldiIsImlhdCI6MTc1NDIyMDA3OSwiZXhwIjoxNzU0MzA2NDc5fQ.Lb3bcsIpPoFIdyrYQuL_zF5tVS8qDigK5Nvb5sLxzXNt5BNPeQ7cJPUDqBGIx6vsQ1PIADKByUtr0-6ilwO7I8Vbz_u3JhK9QKacbubML-xQ006X9gnBrDsLB7r1CjOG9m_s44eLpG5LORWJYR-_Z4IZvVJwY_QQkuQX276_q6KEkprZmZJvlLH6DXXIYto61XYrT_1kvzxFvkBFy-YCQY82rOe1X0OrvyJ3YQpXfwgj_-dCfPjAQ9eoCBIgNK3Vc8Wg3pXM21CX7HZ5oEfOyfL3K5uTCnChEmCLbiw5PzQ2OFB4UzEoYPW23ZOtR0tX1V2wMZu-gQt9dYRPW_lmeQ"; // ganti dengan tokenmu
+  const token = "Bearer "; // ganti dengan tokenmu
 
   const fetchOrders = () => {
     axios
-      .get("https://8000-firebase-resto-1754219676636.cluster-44kx2eiocbhe2tyk3zoyo3ryuo.cloudworkstations.dev/order/dapur", {
+      .get("https://8000/order/dapur", {
         headers: { Authorization: token },
       })
       .then((res) => {
@@ -25,7 +25,7 @@ export default function DashboardDapur() {
   const updateStatus = async (order_id: string, status: string) => {
     try {
       await axios.post(
-        "https://8000-firebase-resto-1754219676636.cluster-44kx2eiocbhe2tyk3zoyo3ryuo.cloudworkstations.dev/order/update-status",
+        "https://8000/order/update-status",
         { order_id, status },
         { headers: { Authorization: token } }
       );
