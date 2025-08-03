@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+
+# Env
+.env
+venv/
+.env.*
+
+# Node.js (kalau ada frontend di repo yang sama)
+node_modules/
+.next/
+dist/
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
